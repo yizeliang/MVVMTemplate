@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVMDemo</string>
+    <string name="app_name_en">MvvmDemo</string>
+</resources>

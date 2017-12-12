@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="demo"
+            type="cn.yzl.mvvmdemo.model.ActivityMainVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            bind:empty="@{@drawable/img_error}"
+            bind:error="@{@drawable/img_error}"
+            bind:imgUrl="@{demo.img}"
+            bind:placeHolder="@{@drawable/img_loading}" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{demo::onViewClick}"
+            android:padding="10dp"
+            android:text="删除item"
+            android:visibility="@{demo.visible?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:adapter="@{demo.adapter}"
+            />
+
+    </LinearLayout>
+
+</layout>
+
+
