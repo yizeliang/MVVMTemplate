@@ -1,18 +1,18 @@
 package cn.yzl.mvvmdemo.model
 
 import android.content.Context
-import android.databinding.BaseObservable
 import android.databinding.Bindable
 import android.databinding.ObservableArrayList
 import android.databinding.ObservableField
 import android.view.View
 import cn.yzl.mvvmdemo.BR
 import cn.yzl.mvvmdemo.ListAdapter
+import cn.yzl.mvvmdemo.base.BaseViewModel
 
 /**
  * Created by YZL on 2017/12/11.
  */
-class ActivityMainVM(var context: Context) : BaseObservable() {
+class ActivityMainVM(context: Context) : BaseViewModel(context) {
     var visible: Boolean = true
         @Bindable
         get

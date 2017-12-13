@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import cn.yzl.mvvmdemo.databinding.ItemListBinding
-import java.util.ArrayList
 
 /**
  * Created by YZL on 2017/12/12.
@@ -20,8 +19,8 @@ class ListAdapter(var context: Context, var data: MutableList<String>) : BaseAda
         } else {
             bind = DataBindingUtil.getBinding(convertView);
         }
-        bind.name = getItem(position)
-        return bind.root
+        bind?.name = getItem(position)
+        return bind!!.root
     }
 
     override fun getItem(position: Int): String {

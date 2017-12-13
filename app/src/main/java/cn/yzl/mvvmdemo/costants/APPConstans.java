@@ -12,14 +12,6 @@ import cn.yzl.mvvmdemo.R;
  * Created by 伊泽 on 2017/5/17.
  */
 public class APPConstans {
-
-    //       <item>all</item>
-//        <item>92</item>
-//        <item>95</item>
-//        <item>98</item>
-//        <item>柴油0#</item>
-    public static final String[] CATOGERY_LIST_KES = new String[]{"all", "92", "95", "98", "柴油"};
-
     /**
      * glide 缓存路径
      */

@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         vm.img.set("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1513060465&di=325408b00f1d4d788d0ee1de070d4c60&src=http://imgsrc.baidu.com/imgad/pic/item/32fa828ba61ea8d3d8d6c33f9c0a304e251f5810.jpg")
 //        vm.img.set("")
         vm.adapter.set(ListAdapter(this, vm.data))
-        for (i in 0 until 10) {
+        for (i in 0..10) {
             vm.data.add("item--$i")
         }
         vm.data.addOnListChangedCallback(object : SimpleListChagngedCallback<ObservableArrayList<String>>() {
@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
         bind.demo = vm;
+        kotlin.run {  }
     }
 }
 

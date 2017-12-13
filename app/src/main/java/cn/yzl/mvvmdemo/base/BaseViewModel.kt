@@ -7,8 +7,5 @@ import android.databinding.Bindable
 /**
  * Created by YZL on 2017/12/8.
  */
-open class BaseViewModel(var context: Context) : BaseObservable() {
-    var a: Int = 0
-        @Bindable
-        get
+open class BaseViewModel(open var context: Context) : BaseObservable() {
 }
