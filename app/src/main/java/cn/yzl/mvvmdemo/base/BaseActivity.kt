@@ -8,7 +8,7 @@ import kotlin.concurrent.thread
 /**
  * Created by YZL on 2017/12/13.
  */
-class BaseActivity : AppCompatActivity() {
+open class BaseActivity : AppCompatActivity() {
 
     val handler = Handler()
 

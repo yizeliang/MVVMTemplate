@@ -1,4 +1,4 @@
-package cn.yzl.mvvmdemo.model
+package cn.yzl.mvvmdemo.ui
 
 import android.content.Context
 import android.databinding.Bindable
@@ -6,7 +6,7 @@ import android.databinding.ObservableArrayList
 import android.databinding.ObservableField
 import android.view.View
 import cn.yzl.mvvmdemo.BR
-import cn.yzl.mvvmdemo.ListAdapter
+import cn.yzl.mvvmdemo.ui.ListAdapter
 import cn.yzl.mvvmdemo.base.BaseViewModel
 
 /**

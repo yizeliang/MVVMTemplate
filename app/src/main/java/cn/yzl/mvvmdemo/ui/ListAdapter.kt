@@ -1,4 +1,4 @@
-package cn.yzl.mvvmdemo
+package cn.yzl.mvvmdemo.ui
 
 import android.content.Context
 import android.databinding.DataBindingUtil
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import cn.yzl.mvvmdemo.R
 import cn.yzl.mvvmdemo.databinding.ItemListBinding
 
 /**

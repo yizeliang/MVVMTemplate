@@ -14,7 +14,7 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget
 /**
  * Created by YZL on 2017/12/12.
  */
-object ImageAttrAdapters {
+object ImageViewAttrAdapters {
 
     const val IMG_SCALE_FITCENTER = 1L;
     const val IMG_SCALE_CENTERCROP = 2L;
@@ -34,7 +34,8 @@ object ImageAttrAdapters {
 
 
     @JvmStatic
-    @BindingAdapter(value = arrayOf("bind_imgUrl", "bind_placeHolder", "bind_error", "bind_empty", "bind_glide_scale", "bind_image_type", "bind_target"),
+    @BindingAdapter(value = arrayOf("bind_imgUrl", "bind_placeHolder", "bind_error", "bind_empty", "bind_glide_scale",
+            "bind_image_type", "bind_target"),
             requireAll = false)
     fun ImageUrlAdapter(view: ImageView,
                         url: String,

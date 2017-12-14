@@ -6,11 +6,11 @@
 
         <import type="android.view.View" />
 
-        <import type="cn.yzl.mvvmdemo.databinding.adapter.ImageAttrAdapters" />
+        <import type="cn.yzl.mvvmdemo.databinding.adapter.ImageViewAttrAdapters" />
 
         <variable
             name="demo"
-            type="cn.yzl.mvvmdemo.model.ActivityMainVM" />
+            type="cn.yzl.mvvmdemo.ui.ActivityMainVM" />
     </data>
 
     <LinearLayout
@@ -42,7 +42,8 @@
 
 
         <ListView
-            adapter="@{demo.adapter}"
+            android:id="@+id/lv"
+            bind_adapter="@={demo.adapter}"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

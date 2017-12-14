@@ -2,6 +2,7 @@ package cn.yzl.mvvmdemo
 
 import android.app.Application
 import cn.yzl.library.util.EnvConfig
+import cn.yzl.mvvmdemo.exception.CrashHandler
 import com.orhanobut.logger.LogLevel
 import com.orhanobut.logger.Logger
 import kotlin.properties.Delegates
@@ -20,6 +21,8 @@ class MyApplication : Application() {
         instance = this
         EnvConfig.setDebug(BuildConfig.DEBUG)
         Logger.init(resources.getString(R.string.app_name_en)).methodCount(3).logLevel(if (EnvConfig.isDebug()) LogLevel.FULL else LogLevel.NONE)
+//        if (BuildConfig.DEBUG)
+//            Thread.setDefaultUncaughtExceptionHandler(CrashHandler())
 
     }
 }

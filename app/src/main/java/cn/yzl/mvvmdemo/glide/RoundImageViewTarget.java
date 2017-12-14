@@ -28,4 +28,5 @@ public class RoundImageViewTarget extends BitmapImageViewTarget {
         circularBitmapDrawable.setCircular(true);
         view.setImageDrawable(circularBitmapDrawable);
     }
+
 }
