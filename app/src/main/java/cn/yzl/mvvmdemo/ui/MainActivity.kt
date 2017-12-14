@@ -10,6 +10,7 @@ import cn.yzl.mvvmdemo.R
 import cn.yzl.mvvmdemo.base.BaseActivity
 import cn.yzl.mvvmdemo.databinding.ActivityMainBinding
 import cn.yzl.mvvmdemo.databinding.callback.SimpleListChagngedCallback
+import cn.yzl.mvvmdemo.ui.pullrefresh.PullRefreshRvActivity
 
 class MainActivity : BaseActivity() {
 
@@ -35,7 +36,7 @@ class MainActivity : BaseActivity() {
         bind.lv.setOnItemClickListener { adapterView: AdapterView<*>, view: View, position: Int, id: Long ->
             when (position) {
                 0 -> {
-                    startActivity(Intent(this@MainActivity, MainActivity::class.java))
+                    startActivity(Intent(this@MainActivity, PullRefreshRvActivity::class.java))
                 }
             }
         }

@@ -15,10 +15,10 @@
 - Glide
 - PullToRefreshLayout
 
-## 待解决的问题
+## 存在的问题
 
 - 自定义View或者常用View的 属性映射(待完成,还是挺多需要写的)
--
+- 当映射的属性值没有变化时,是不会执行映射的方法的 (cn.yzl.mvvmdemo.ui.pullrefresh.ActivityPullRefreshRvVM)
 
 ## 规范
 

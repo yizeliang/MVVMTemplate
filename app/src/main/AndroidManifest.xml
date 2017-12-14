@@ -20,11 +20,12 @@
             </intent-filter>
         </activity>
 
-
         <!-- glide cache -->
         <meta-data
             android:name="cn.yzl.mvvmdemo.glide.GlideCache"
             android:value="GlideModule" />
+
+        <activity android:name=".ui.pullrefresh.PullRefreshRvActivity"></activity>
     </application>
 
 </manifest>

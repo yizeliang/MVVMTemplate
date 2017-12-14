@@ -18,14 +18,15 @@ open class BaseActivity : AppCompatActivity() {
 
     fun async(display: Long = 0L, block: () -> Unit) {
         thread(start = true) {
-            Thread.sleep(display)
+            if (display.compareTo(0) > 0) {
+                Thread.sleep(display)
+            }
             block()
         }
     }
 
     fun uiThread(block: () -> Unit) {
-        if (isFinishing)
-            return
+        if (isFinishing) return
         runOnUiThread(block)
     }
 

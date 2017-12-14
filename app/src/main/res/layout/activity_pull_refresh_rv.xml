@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="cn.yzl.mvvmdemo.ui.pullrefresh.ActivityPullRefreshRvVM" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.jingchen.pulltorefresh.PullToRefreshLayout
+            android:id="@+id/pl"
+            bind_enable_loadmore="@{true}"
+            bind_enable_refresh="@{true}"
+            bind_state="@{vm.plState}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.jingchen.pulltorefresh.PullableRecyclerView
+                bind_adapter="@{vm.adapter}"
+                bind_layout_manager="@{vm.layoutManager}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+    </LinearLayout>
+
+</layout>
+

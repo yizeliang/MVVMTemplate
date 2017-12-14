@@ -33,9 +33,11 @@ object PullRereshLayoutAttrAdapter {
 
     @JvmStatic
     @BindingAdapter("bind_state", "bind_enable_refresh", "bind_enable_loadmore", requireAll = false)
-    fun recyclerViewLayoutMnager(view: PullToRefreshLayout, refreshEnable: Boolean,
-                                 loadmoreEnable: Boolean,
-                                 @State state: Long = STATE_DEFAULT) {
+    fun recyclerViewLayoutMnager(view: PullToRefreshLayout,
+                                 @State state: Long = STATE_DEFAULT,
+                                 refreshEnable: Boolean,
+                                 loadmoreEnable: Boolean
+    ) {
         view.setPullDownEnable(refreshEnable)
         view.setPullUpEnable(loadmoreEnable)
 

@@ -6,7 +6,8 @@
 
         <import type="android.view.View" />
 
-        <import type="cn.yzl.mvvmdemo.databinding.adapter.ImageViewAttrAdapters" />
+        <import type="cn.yzl.mvvmdemo.databinding.adapter.ImageViewAttrAdapters"
+            />
 
         <variable
             name="demo"
@@ -20,8 +21,7 @@
         android:orientation="vertical">
 
         <ImageView
-            bind_error="@{@drawable/img_error}"
-            bind_glide_scale="@{ImageAttrAdapters.IMG_SCALE_CENTERCROP}"
+            bind_glide_scale="@{ImageViewAttrAdapters.IMG_SCALE_CENTERCROP}"
             bind_imgUrl="@{demo.img}"
             bind_placeHolder="@{@drawable/img_loading}"
             android:layout_width="100dp"
@@ -43,7 +43,7 @@
 
         <ListView
             android:id="@+id/lv"
-            bind_adapter="@={demo.adapter}"
+            bind_adapter="@{demo.adapter}"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

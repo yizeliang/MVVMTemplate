@@ -32,38 +32,45 @@ object ImageViewAttrAdapters {
     annotation class ImageType
 
 
-
     @JvmStatic
     @BindingAdapter(value = arrayOf("bind_imgUrl", "bind_placeHolder", "bind_error", "bind_empty", "bind_glide_scale",
             "bind_image_type", "bind_target"),
             requireAll = false)
     fun ImageUrlAdapter(view: ImageView,
-                        url: String,
-                        placehoder: Drawable = view.context.resources.getDrawable(R.drawable.img_loading),
-                        error: Drawable = view.context.resources.getDrawable(R.drawable.img_error),
-                        emptyImg: Drawable = error,
-                        @ImageScaleType scaleType: Long = IMG_SCALE_DEFAULT,
-                        @ImageType imageType: Long = IMG_BITMAP,
+                        url: String?,
+                        _placehoder: Drawable?,
+                        _error: Drawable?,
+                        emptyImg: Drawable?,
+                        @ImageScaleType scaleType: Long? = IMG_SCALE_DEFAULT,
+                        @ImageType imageType: Long? = IMG_BITMAP,
                         target: BitmapImageViewTarget?) {
 
         if (EmptyUtil.isEmpty(url)) {
-            view.setImageDrawable(emptyImg);
+            if (emptyImg != null) {
+                view.setImageDrawable(emptyImg);
+            }
             return
         }
         val load = Glide.with(view.context)
-                .load(url)
-        var img = if (imageType == IMG_BITMAP) load.asBitmap() else load.asBitmap()
+                .load(url!!)
+        var img = if (imageType == IMG_BITMAP || imageType == null) load.asBitmap() else load.asBitmap()
         var scale: BitmapRequestBuilder<String, Bitmap>? = null
-        when (scaleType) {
-            IMG_SCALE_FITCENTER -> {
-                scale = img.fitCenter()
-            }
-            IMG_SCALE_CENTERCROP -> {
-                scale = img.centerCrop()
+        if (scaleType != null) {
+            when (scaleType) {
+                IMG_SCALE_FITCENTER -> {
+                    scale = img.fitCenter()
+                }
+                IMG_SCALE_CENTERCROP -> {
+                    scale = img.centerCrop()
+                }
             }
         }
 
         var request: BitmapRequestBuilder<String, Bitmap>
+
+        var placehoder = _placehoder ?: view.context.resources.getDrawable(R.drawable.img_loading)
+        var error = _error ?: view.context.resources.getDrawable(R.drawable.img_error)
+
 
         if (scale != null) {
             request = scale.placeholder(placehoder)
@@ -77,6 +84,7 @@ object ImageViewAttrAdapters {
         } else {
             request.into(view)
         }
+
     }
 
 
